@@ -1,35 +1,125 @@
-*{
-    margin: 0 auto;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.container{
-    text-align: center;
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #222;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 200px;
-    width: 600px;
-    padding: 10px;
-    border: 1px solid black;
-    background-color: black;
+    justify-content: center;
+    width: 300px;
 }
 
-.display{
-    border: 1px solid red;
-    background-color: rgb(135, 255, 55);
-    width: 100%;
-    height: 40px;
-    padding: 16px;
+.mode__btn-container{
+    position: relative;
+}
+
+.night-mode-btn{
+    position: absolute;
+    top: -270px;
+    left: 600px;
+    padding: 16px 50px;
+    border: none;
+}
+
+.display {
+    background: #333;
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 20px;
+    text-align: right;
     border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.calculator{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
 }
 
-button{
-    padding: 16px 32px;
+button {
+    background-color: #444;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(1.05);
+}
+
+button[data-num="C"] {
+    background-color: #e74c3c;
+}
+
+button[data-num="C"]:hover {
+    background-color: #c0392b;
+}
+
+button[data-num="="] {
+    background-color: #2ecc71;
+    grid-column: span 2;
+}
+
+button[data-num="="]:hover {
+    background-color: #27ae60;
+}
+
+button[data-num="+"] {
+    background-color: #f39c12;
+}
+
+button[data-num="-"] {
+    background-color: #f39c12;
+}
+
+button[data-num="*"] {
+    background-color: #f39c12;
+}
+
+button[data-num="/"] {
+    background-color: #f39c12;
+}
+.number__btn{
+    background-color: #3498db;
+}
+
+button[data-num="."] {
+    background-color: #3498db;
+    grid-column: span 2;
+}
+
+button[data-num="+"]:hover,
+button[data-num="-"]:hover,
+button[data-num="*"]:hover,
+button[data-num="/"]:hover {
+    background-color: #e67e22;
 }
